@@ -20,12 +20,9 @@ var indexRoutes=require("./routes/index");
 //mongoose.connect("mongodb://localhost:27017/Trivio",{useNewUrlParser: true,  useUnifiedTopology: true
 				//										,useFindAndModify: false, useCreateIndex: true});
 
-mongoose.connect("mongodb+srv://Prathmesh:Somesh123@cluster0-ujwly.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser: true,  useUnifiedTopology: true
-													,useFindAndModify: false, useCreateIndex: true});
 
-
-//mongoose.connect(process.env.DATABASEURL ,{useNewUrlParser: true,  useUnifiedTopology: true
-//											,useFindAndModify: false, useCreateIndex: true});
+mongoose.connect(process.env.DATABASEURL ,{useNewUrlParser: true,  useUnifiedTopology: true
+									,useFindAndModify: false, useCreateIndex: true});
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
