@@ -1,0 +1,24 @@
+<%- include("../partials/header") %>
+
+
+<div class="container" style="margin: 4% auto;">
+	<div class="row text-center">
+		<h1>Create new State</h1>
+		<div style="width:30%; margin:2% auto;">
+			<form action="/states" method="POST">
+				<div class="form-group">
+					<input class="form-control" type="text" name="state[name]" placeholder="name">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" name="state[image]" placeholder="image">
+				</div>
+				<div class="form-group">
+					<button class="form-control" class="btn btn-lg btn-primary btn-block">Submit</button>	
+				</div>
+					<a href="/states">Go back></a>
+			</form>
+		</div>
+	</div>
+</div>
+
+<%- include("../partials/footer") %>

@@ -1,0 +1,58 @@
+<%- include("../partials/header") %>
+
+<div class="show">
+	<div class="row">
+		<div class="col-md-8 ">
+			<div class="thumbnail">
+				<img class="img-responsive" src="<%= destination.image%>">
+				<div class="caption-full">
+					<h3 style="margin-left:15px; color:salmon; font-weight:700;" class="name"><%= destination.name%></h3>
+					<!--<form class="btn-inline"  action="/states/<%= state._id%>/<%=destination._id%>?_method=DELETE" method="POST">
+							<button class="btn btn-danger pull-right">Delete</button>
+					</form>-->
+					<p style="margin-left:15px; margin-right:15px; margin-bottom:15px; font-size:16px;">
+						<%= destination.description %>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div id="fixed" class="col-md-4">
+			<div class="thumbnail">
+				<div class="embed-responsive embed-responsive-4by3">
+					<iframe id="video" class="embed-responsive-item" src="<%= destination.video%>"></iframe>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div class="col-md-8">
+		<div class="well">
+			<div class="text-right">
+				<a href="/states/<%= state._id%>/<%= destination._id%>/new" class="btn btn-primary btn-lg">Add Comment</a>
+			</div>
+			<hr>
+			<% destination.comments.forEach(function(comment){ %>
+				<%if(currentUser && comment.author.id.equals(currentUser._id)){%>
+					<div class="pull-right">
+						 <form id="delete-form" action="/states/<%= state._id%>/<%= destination._id%>/<%= comment._id%>?_method=DELETE" method="POST">
+							<button>
+								<span id="icon-delete" class="glyphicon glyphicon-trash"></span>
+							 </button>
+						</form>
+					</div>
+				<%}%>
+				<strong><h4 style="font-weight:500;"><%= comment.author.username%></h4></strong>
+				<p>
+					<%= comment.text%>
+				</p>
+				
+			<%}); %>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+
+
+

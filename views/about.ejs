@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8">
+        <title>Travio</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheets/about.css">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+    </head>
+    <body>
+		<nav id="navigation" class="navbar navbar-inverse  navbar-static-top">
+			<div class="container">
+				<div class="navbar-header" style="font-weight:600;">
+					<a class="navbar-brand" href="/states">Travio</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<div class="nav navbar-nav">
+							<li><a href="/about"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
+						</div>
+						<% if(!currentUser){ %>
+							<li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+							<li><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+						<%}else{ %>
+							<li><a href=""><span class="glyphicon glyphicon-user"></span> Signed in as <%= currentUser.username%></a></li>
+							<li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+						<%} %>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container-fluid">
+			
+			<h1>About Us <small>Nice to meet you!</small></h1>
+			<hr>
+			
+			<p>
+				Travio is travel app,where user can explore different travel destinations in the world and plan vacation.
+				<br>
+				This is small project to serve the travel information.
+				<br>
+				It uses the following technologies :<span style="color:#22323;"> Node.js, Express.js, MongoDB and Bootstrap</span> 
+			</p>
+			
+			<div id="team">
+				<h1>Our Team</h1>
+			</div>
+			<hr color="black" height="2%">
+			<div class="row">
+				<div class="col-md-4 text-center">
+					<h3>Prathmesh Bhondave</h3>
+					<h4 style="color:#acacac;">Undergraduate student at Pune University</h4>
+					<p>
+						Is the founder of this website
+						<br>
+					
+							<a href="https://www.facebook.com/prathmesh.bhondave.1" target="_blank" style="color:rgba(0,0,200,0.5); margin:auto;"><i class="icon-facebook-sign icon-2x" ></i> </a>
+							<a style="margin:auto 6%;" href="https://www.linkedin.com/in/Prathmesh-Bhondave" target="_blank" ><i class="icon-linkedin-sign icon-2x"></i> </a>
+							<a href="https://github.com/Prathmesh311" style="color:black;" target="_blank" ><i class="icon-github icon-2x"></i> </a>
+							<br><br>
+							<hr id="last">
+							<br>
+					</p>
+				</div>
+			</div>
+			<p>Copyright © Travio 2020</p>
+		</div>
+	</body>
+</html>
+

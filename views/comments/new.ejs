@@ -1,0 +1,22 @@
+<%- include("../partials/header") %>
+
+<div class="container" style="margin: 4% auto;">
+	<div class="row text-center">
+		<h1>Add New Comment</h1>
+		<div style="width:30%; margin:2% auto;">
+			<form action="/states/<%=state._id%>/<%=destination._id%>" method="POST">
+				
+				<div class="form-group">
+					<input class="form-control" type="text" name="comment[text]" placeholder="comment">
+				</div>
+				<div class="form-group">
+					<button class="form-control" class="btn btn-primary btn-lg  btn-block">Add Comment</button>	
+				</div>
+					<a href="/states">Go back></a>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+<%- include("../partials/footer") %>

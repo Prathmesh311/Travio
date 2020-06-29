@@ -1,0 +1,49 @@
+<%- include("../partials/header") %>
+
+
+<div class="content-wrapper">
+	<div class="text-wrapper">
+		<h1>
+			Welcome &nbspTo Travio!
+		</h1>
+		<p>
+			Here are our Hand-Picked &nbsp Destinations for you
+		</p>
+	</div>
+</div>
+
+<div class="show">
+		<div class="row  text-center" style="display:flex; flex-wrap:wrap;">
+			<% states.forEach(function(states){ %>
+				<div class="col-md-3 col-sm-6">
+					<a href="/states/<%= states._id %>">
+						<div class="thumbnail thum">
+							<img src="<%= states.image %>">
+							<div class="caption">
+								<h3 style="color:black; font-weight:500;"><%= states.name %></h3>
+								<!--<a href="/states/<%= states._id %>" class="btn btn-lg btn-primary">Explore</a>-->
+								
+							</div>
+						</div>
+					</a>
+				</div>
+			<%}); %>
+		</div>
+</div>
+
+
+<!--<div id="main-jumbo" class="jumbotron">
+	<div class="container text-center" id="heading">
+		<h2>
+			Welcome To Trivio!
+		</h2>
+		<p>
+			Hand picked destinations for you
+		</p>
+		<a href="/states/new" class="btn btn-primary">Add new State</a>
+	</div>
+</div>-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+<%- include("../partials/footer") %>

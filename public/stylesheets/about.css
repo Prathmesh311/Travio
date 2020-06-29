@@ -1,0 +1,25 @@
+body{
+	background: #eee;
+}
+
+.container-fluid{
+	margin-top:5%;
+	margin-left:4%;
+}
+
+.container-fluid hr{
+	color:black;
+}
+
+#team{
+	margin-top:5%;
+}
+
+h3{
+	font-weight:500;
+	font-size:28px;
+}
+
+p{
+	font-size:18px;
+}

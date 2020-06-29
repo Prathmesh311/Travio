@@ -1,0 +1,31 @@
+<%- include("../partials/header") %>
+
+<div class="container" style="margin: 4% auto;">
+	<div class="row text-center">
+		<h1>Create new destination</h1>
+		<div style="width:30%; margin:2% auto;">
+			<form action="/states/<%= state._id%>" method="POST">
+				<div class="form-group">
+					<input class="form-control" type="text" name="destination[name]" placeholder="name">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" name="destination[image]" placeholder="image">
+				</div>
+				<textarea class="form-control form-group" row="4" type="text" name="destination[des]" placeholder="des"></textarea>
+				
+				<textarea class="form-group form-control" row="12" type="text" name="destination[description]" placeholder="description">
+
+				</textarea>
+				<div class="form-group">
+					<input class="form-control" type="text" name="destination[video]" placeholder="video">
+				</div>
+				<div class="form-group">
+					<button class="form-control" class="btn btn-lg btn-primary btn-block">Submit</button>	
+				</div>
+					<a href="/states">Go back></a>
+			</form>
+		</div>
+	</div>
+</div>
+
+<%- include("../partials/footer") %>

@@ -1,0 +1,38 @@
+<%- include("../partials/header") %>
+
+
+<div class="jumbotron text-center">
+	<h1 id="desheader">
+		<%= state.name%>
+	</h1>
+	<h3 >
+		Top destinations in <%= state.name%>
+	</h3>
+	<!--<a href="/states/<%= state._id%>/new" class="btn btn-primary btn-lg">Add new Destination</a>-->
+</div>
+
+
+<div class="show" >
+	<div class="row" style="display:flex; flex-wrap:wrap;">
+		<% state.destinations.forEach(function(destination){ %>
+			<div class="col-md-3 col-sm-6">
+				<div class="thumbnail thum">
+					<img src="<%= destination.image %>">
+					<div class="caption">
+						<h3><%= destination.name %></h3>
+						<p>
+							<span ><%=destination.des%></span>
+						</p>
+						<a href="/states/<%= state._id%>/<%= destination._id%>" class="btn btn-primary" role="button">More Info</a>
+						<!--<form class="btn-inline"  action="/states/<%= state._id%>/<%=destination._id%>?_method=DELETE" method="POST">
+							<button class="btn btn-danger pull-right">Delete</button>
+						</form>-->
+					</div>
+				</div>
+			</div>
+		<%}); %>
+	</div>	
+</div>
+
+
+<%- include("../partials/footer") %>
